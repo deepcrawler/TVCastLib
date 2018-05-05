@@ -1,0 +1,33 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+//  Copyright (c) 2015 Hamed Ghaderipour.
+//
+
+//
+
+#define TVCast_LIB_VERSION @"1.6.0"
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif
+
+// Uncomment this line to enable SDK logging
+//#define TVCast_LIB_ENABLE_LOG
+
+#ifndef kTVCastLibWirelessSSIDChanged
+#define kTVCastLibWirelessSSIDChanged @"TVCast_LIB_Wireless_SSID_Changed"
+#endif
+
+#ifdef TVCast_LIB_ENABLE_LOG
+    // credit: http://stackoverflow.com/a/969291/2715
+    #ifdef DEBUG
+    #   define DLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+    #else
+    #   define DLog(...)
+    #endif
+#else
+    #   define DLog(...)
+#endif
